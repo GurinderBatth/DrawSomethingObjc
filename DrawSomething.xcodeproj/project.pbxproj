@@ -15,6 +15,7 @@
 		180E372E21EB996C00D2CEB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E372D21EB996C00D2CEB0 /* main.m */; };
 		180E373821EB996C00D2CEB0 /* DrawSomethingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E373721EB996C00D2CEB0 /* DrawSomethingTests.m */; };
 		180E374321EB996C00D2CEB0 /* DrawSomethingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E374221EB996C00D2CEB0 /* DrawSomethingUITests.m */; };
+		18B4C3C421EE36DA0081BA7C /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4C3C321EE36DA0081BA7C /* DrawView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		180E373E21EB996C00D2CEB0 /* DrawSomethingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawSomethingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		180E374221EB996C00D2CEB0 /* DrawSomethingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawSomethingUITests.m; sourceTree = "<group>"; };
 		180E374421EB996C00D2CEB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B4C3C221EE36DA0081BA7C /* DrawView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
+		18B4C3C321EE36DA0081BA7C /* DrawView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				180E371F21EB996A00D2CEB0 /* AppDelegate.m */,
 				180E372121EB996A00D2CEB0 /* ViewController.h */,
 				180E372221EB996A00D2CEB0 /* ViewController.m */,
+				18B4C3C221EE36DA0081BA7C /* DrawView.h */,
+				18B4C3C321EE36DA0081BA7C /* DrawView.m */,
 				180E372421EB996A00D2CEB0 /* Main.storyboard */,
 				180E372721EB996C00D2CEB0 /* Assets.xcassets */,
 				180E372921EB996C00D2CEB0 /* LaunchScreen.storyboard */,
@@ -264,6 +269,7 @@
 			files = (
 				180E372321EB996A00D2CEB0 /* ViewController.m in Sources */,
 				180E372E21EB996C00D2CEB0 /* main.m in Sources */,
+				18B4C3C421EE36DA0081BA7C /* DrawView.m in Sources */,
 				180E372021EB996A00D2CEB0 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
