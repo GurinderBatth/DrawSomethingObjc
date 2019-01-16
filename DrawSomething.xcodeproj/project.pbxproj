@@ -16,6 +16,7 @@
 		180E373821EB996C00D2CEB0 /* DrawSomethingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E373721EB996C00D2CEB0 /* DrawSomethingTests.m */; };
 		180E374321EB996C00D2CEB0 /* DrawSomethingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 180E374221EB996C00D2CEB0 /* DrawSomethingUITests.m */; };
 		18B4C3C421EE36DA0081BA7C /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4C3C321EE36DA0081BA7C /* DrawView.m */; };
+		18ED7BCA21EF96CF00BBB7FB /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ED7BC921EF96CF00BBB7FB /* Line.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		180E374421EB996C00D2CEB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B4C3C221EE36DA0081BA7C /* DrawView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
 		18B4C3C321EE36DA0081BA7C /* DrawView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		18ED7BC821EF96CF00BBB7FB /* Line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		18ED7BC921EF96CF00BBB7FB /* Line.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				180E372221EB996A00D2CEB0 /* ViewController.m */,
 				18B4C3C221EE36DA0081BA7C /* DrawView.h */,
 				18B4C3C321EE36DA0081BA7C /* DrawView.m */,
+				18ED7BC821EF96CF00BBB7FB /* Line.h */,
+				18ED7BC921EF96CF00BBB7FB /* Line.m */,
 				180E372421EB996A00D2CEB0 /* Main.storyboard */,
 				180E372721EB996C00D2CEB0 /* Assets.xcassets */,
 				180E372921EB996C00D2CEB0 /* LaunchScreen.storyboard */,
@@ -267,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18ED7BCA21EF96CF00BBB7FB /* Line.m in Sources */,
 				180E372321EB996A00D2CEB0 /* ViewController.m in Sources */,
 				180E372E21EB996C00D2CEB0 /* main.m in Sources */,
 				18B4C3C421EE36DA0081BA7C /* DrawView.m in Sources */,

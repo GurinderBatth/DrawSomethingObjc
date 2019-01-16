@@ -13,6 +13,8 @@
 
 -(instancetype)init{
     lines = [[NSMutableArray alloc]init];
+    strokeColor = [UIColor blackColor];
+    strokeWidth = 1.0f;
     return [super init];
 }
 
@@ -21,40 +23,49 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    for (NSMutableArray<NSValue *> * linesPoint in lines) {
-        for (int i = 0; i < [linesPoint count]; i++){
+    for (Line * linesPoint in lines) {
+        for (int i = 0; i < [[linesPoint lines] count]; i++){
+            CGContextSetLineWidth(context, [linesPoint strokeWidth]);
+            CGContextSetStrokeColorWithColor(context, [linesPoint strokeColor].CGColor);
             if (i == 0){
-                CGPoint startPoint = [[linesPoint objectAtIndex:i] CGPointValue];
+                CGPoint startPoint = [[[linesPoint lines] objectAtIndex:i] CGPointValue];
                 CGContextMoveToPoint(context, startPoint.x, startPoint.y);
             }else{
-                CGPoint endPoint = [[linesPoint objectAtIndex:i]CGPointValue];
+                CGPoint endPoint = [[[linesPoint lines] objectAtIndex:i]CGPointValue];
                 CGContextAddLineToPoint(context, endPoint.x, endPoint.y);
             }
         }
+        CGContextStrokePath(context);
     }
-    
-    CGContextSetLineWidth(context, 4);
-    CGContextStrokePath(context);
     
 }
 
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [lines addObject:[NSMutableArray new]];
+    Line * line = [[Line alloc]init:strokeWidth strokeColor:strokeColor allLines:[NSMutableArray new]];
+    [lines addObject:line];
 }
 
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     CGPoint point = [[[touches allObjects]firstObject]locationInView:nil];
     NSValue * value = [NSValue valueWithCGPoint:point];
     
-    NSMutableArray<NSValue *> * lastObject = [lines lastObject];
+    Line * lastObject = [lines lastObject];
     [lines removeLastObject];
-    [lastObject addObject:value];
+    [[lastObject lines] addObject:value];
     [lines addObject:lastObject];
     
     [self setNeedsDisplay];
 }
 
+
+-(void)setStrokeWidth:(CGFloat)width{
+    strokeWidth = width;
+}
+
+-(void)setStrokeColor:(UIColor *)color{
+    strokeColor = color;
+}
 
 -(void)undoAction{
     [lines removeLastObject];

@@ -7,13 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Line.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+//struct
+
 @interface DrawView : UIView{
-    NSMutableArray<NSMutableArray<NSValue *> *> * lines;
+    
+    NSMutableArray<Line *> * lines;
+    
+    UIColor                                     * strokeColor;
+    
+    CGFloat                                       strokeWidth;
+    
 }
 
+-(void)setStrokeWidth:(CGFloat)width;
+-(void)setStrokeColor:(UIColor *)color;
 -(void)undoAction;
 -(void)clearAction;
 

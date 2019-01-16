@@ -43,7 +43,26 @@
     [clearButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [clearButton addTarget:self action:@selector(clearAction) forControlEvents:UIControlEventTouchUpInside];
     
-    NSArray<UIView *> * buttons= [[NSArray alloc]initWithObjects:undoButton,clearButton, nil];
+    UIButton * yellowButton = [[UIButton alloc]init];
+    [yellowButton setBackgroundColor:[UIColor yellowColor]];
+    [yellowButton addTarget:self action:@selector(yellowColor) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton * redColor = [[UIButton alloc]init];
+    [redColor setBackgroundColor:[UIColor redColor]];
+    [redColor addTarget:self action:@selector(redColor) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton * blueColor = [[UIButton alloc]init];
+    [blueColor setBackgroundColor:[UIColor blueColor]];
+    [blueColor addTarget:self action:@selector(blueColor) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIStackView * colorsButtonsStackView = [[UIStackView alloc]initWithArrangedSubviews:@[yellowButton,redColor,blueColor]];
+    
+    UISlider * slider = [[UISlider alloc]init];
+    [slider setMinimumValue:1];
+    [slider setMaximumValue:10];
+    [slider addTarget:self action:@selector(changeSliderValue:) forControlEvents:UIControlEventValueChanged];
+    
+    NSArray<UIView *> * buttons= [[NSArray alloc]initWithObjects:undoButton,clearButton, colorsButtonsStackView,slider, nil];
     
     UIStackView * buttonView = [[UIStackView alloc]initWithArrangedSubviews:buttons];
     [buttonView setSpacing:20];
@@ -51,7 +70,24 @@
     
     [buttonView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [[[buttonView leadingAnchor]constraintEqualToAnchor:[drawView leadingAnchor] constant:20]setActive:YES];
-    [[[buttonView bottomAnchor]constraintEqualToAnchor:[drawView bottomAnchor] constant:-40]setActive:YES];
+    [[[buttonView bottomAnchor]constraintEqualToAnchor:[[self.view safeAreaLayoutGuide] bottomAnchor] constant:-10]setActive:YES];
+    [[[buttonView trailingAnchor]constraintEqualToAnchor:[drawView trailingAnchor] constant:-20]setActive:YES];
+}
+
+-(void)yellowColor{
+    [drawView setStrokeColor:[UIColor yellowColor]];
+}
+
+-(void)redColor{
+    [drawView setStrokeColor:[UIColor redColor]];
+}
+
+-(void)blueColor{
+    [drawView setStrokeColor:[UIColor blueColor]];
+}
+
+-(void)changeSliderValue:(UISlider *)slider{
+    [drawView setStrokeWidth:slider.value];
 }
 
 -(void)undoAction{
